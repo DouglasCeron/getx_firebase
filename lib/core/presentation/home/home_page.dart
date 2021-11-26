@@ -1,4 +1,5 @@
 import 'package:flutter_application_1/core/presentation/second/second_page.dart';
+import 'package:flutter_application_1/shared/routes/app_routes.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
@@ -14,17 +15,23 @@ class HomePage extends GetWidget<HomeController> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Clicks ${controller.counter}',
+            Center(
+              child: Text(
+                'Clicks ${controller.counter}',
+              ),
             ),
             const SizedBox(
               height: 10,
             ),
             ElevatedButton(
-              onPressed: () => Get.to(const SecondPage()),
+              onPressed: () => Get.offAllNamed(Approutes.second),
               child: const Text('Page 2'),
             ),
           ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.add),
+          onPressed: () => controller.increment(),
         ),
       ),
     );

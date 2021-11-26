@@ -5,5 +5,6 @@ class HomeController extends GetxController {
 
   void increment() {
     counter++;
+    update();
   }
 }
